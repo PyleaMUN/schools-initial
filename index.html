@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Dashboard (Internal Use) - PyleaMUN</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #E8EAE6;
+      color: #333;
+    }
+
+    .letterhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #D6DBD2;
+      border-bottom: 2px solid #444;
+      padding: 10px 20px;
+      height: 100px;
+    }
+
+    .address, .contact {
+      width: 25%;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .contact div {
+      margin: 2px 0;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    .letterhead a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .letterhead a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #005b63;
+      margin-bottom: 1em;
+    }
+
+    /* Legend Box Style */
+    .legend-box {
+        background-color: #fffde7;
+        border: 1px solid #fff9c4;
+        border-left: 5px solid #fdd835;
+        padding: 1em 1.5em;
+        margin-bottom: 1.5em;
+        border-radius: 8px;
+        font-style: italic;
+        color: #5f5f5f;
+    }
+    
+    .legend-box code {
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* New Summary Box Style */
+    .summary-box {
+        background-color: #f3e5f5;
+        border: 1px solid #e1bee7;
+        border-left: 5px solid #8e24aa;
+        padding: 1em 1.5em;
+        margin-bottom: 2em;
+        border-radius: 8px;
+    }
+    .summary-box h2 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        color: #6a1b9a;
+        font-size: 1.2em;
+        text-align: left;
+    }
+    .summary-box p {
+        font-size: 1.1em;
+        margin: 0.5em 0;
+    }
+    .summary-box strong {
+        color: #4a148c;
+    }
+    .unavailable-countries-list {
+        list-style-type: none;
+        padding-left: 0;
+        column-count: 4;
+        column-gap: 20px;
+        margin-top: 0.5em;
+    }
+    .unavailable-countries-list li {
+        margin-bottom: 0.3em;
+    }
+
+    /* Styles for the registration data display */
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .school-card {
+        background: #ffffff;
+        padding: 1.5em 2em;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border-left: 5px solid #00897b;
+    }
+
+    .school-card h3 {
+        color: #005b63;
+        margin-top: 0;
+        border-bottom: 1px solid #b2dfdb;
+        padding-bottom: 0.5em;
+        font-size: 1.4em;
+    }
+    
+    .school-card p {
+        margin: 0.5em 0;
+        line-height: 1.6;
+    }
+
+    .school-card strong {
+        color: #004d40;
+        min-width: 150px;
+        display: inline-block;
+    }
+    
+    .school-card a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+    .school-card a:hover {
+        text-decoration: underline;
+    }
+    
+    .school-card ol {
+        padding-left: 20px;
+    }
+
+    /* Assigned Countries Section Style */
+    .assignment-section {
+        background-color: #e0f2f1;
+        border: 1px solid #b2dfdb;
+        padding: 0.7em 1.2em;
+        margin-top: 1em;
+        border-radius: 8px;
+    }
+    .assignment-section p {
+        margin: 0;
+    }
+    .assignment-section ul {
+        padding-left: 20px;
+        margin: 0.5em 0 0.2em 0;
+        list-style-type: square;
+    }
+    
+    .timestamp {
+        font-size: 0.8em;
+        color: #777;
+        text-align: right;
+        margin-top: 1.5em;
+    }
+
+    @media (max-width: 768px) {
+      .letterhead, .unavailable-countries-list {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        column-count: 2;
+      }
+      .address, .contact {
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .logo {
+        margin: 15px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="letterhead">
+    <div class="address">
+      <strong>4 Isminis Str.</strong><br>
+      Pylaia, Thessaloniki - 55535
+    </div>
+    <div>
+      <img src="https://pyleamun.github.io/interview-guide/pyleaMUNfinallogo_transparent.png" alt="PyleaMUN Logo" class="logo">
+    </div>
+    <div class="contact">
+      <div>📞 +30 2310329199</div>
+      <div>📧 <a href="mailto:pyleamun@gmail.com">pyleamun@gmail.com</a></div>
+      <div>🌐 <a href="https://pyleamun.github.io/pyleamun2026/" target="_blank">pyleamun.github.io/pyleamun2026</a></div>
+    </div>
+  </div>
+
+  <main>
+    <h1>📊 Initial Registration of Schools (for internal secretarial use only)</h1>
+    
+    <div class="legend-box">
+        <strong>Legend:</strong> For the purposes of the PyleaMUN Conference, <em>Junior High School</em>, <em>Lower Secondary School</em> and <em>Middle School</em> will be used to refer to <code>"Γυμνάσιο"</code> while <em>Senior High School</em> and <em>Upper Secondary School</em> will be used to refer to <code>"Λύκειο"</code>.
+    </div>
+
+    <div class="summary-box">
+        <h2>Live Summary</h2>
+        <p><strong>Total Delegates Registered:</strong> 100</p>
+        <div>
+            <strong>Unavailable Countries (Already Assigned):</strong>
+            <ul class="unavailable-countries-list">
+                <li>Australia</li>
+                <li>China</li>
+                <li>Denmark</li>
+                <li>Finland</li>
+                <li>France</li>
+                <li>Germany</li>
+                <li>Greece</li>
+                <li>Italy</li>
+                <li>Netherlands</li>
+                <li>Portugal</li>
+                <li>Saudi Arabia</li>
+                <li>Sweden</li>
+                <li>United Kingdom</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card-container">
+
+        <div class="school-card">
+            <h3>1. 1st Middle School of Pylea</h3>
+            <p><strong>School Name:</strong> 1st Middle School of Pylea</p>
+            <p><strong>Principal:</strong> Panagiotis Domvros</p>
+            <p><strong>Address:</strong> Isminis 4 Pylea, 55535</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@1gym-pyleas.thess.sch.gr">mail@1gym-pyleas.thess.sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2310329199">2310329199</a></p>
+            <p><strong>Chief Advisor(s):</strong> Fani Vasilikou</p>
+            <p><strong>Contact Advisor:</strong> Fani Vasilikou +306976371669</p>
+            <p><strong>Delegates:</strong> 18</p>
+            <p><strong>Country Choices:</strong></p>
+            <ol>
+                <li>France</li>
+                <li>United Kingdom</li>
+            </ol>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                    <li>France</li>
+                    <li>United Kingdom</li>
+                </ul>
+            </div>
+            <div class="timestamp">Registered on: July 2, 2025, At 5:25:50 PM</div>
+        </div>
+
+        <div class="school-card">
+            <h3>2. 2nd General Lyceum of Sykeon “Philippos”</h3>
+            <p><strong>School Name:</strong> 2nd General Lyceum of Sykeon “Philippos”</p>
+            <p><strong>Principal:</strong> Paschalis Karakaris</p>
+            <p><strong>Address:</strong> 24 spartakou str Sykies</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@2lyk-sykeon.thess.sch.gr">mail@2lyk-sykeon.thess.sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2310202091">2310202091</a></p>
+            <p><strong>Chief Advisor(s):</strong> Maria Antoniadou</p>
+            <p><strong>Contact Advisor:</strong> Maria Antoniadou</p>
+            <p><strong>Delegates:</strong> 10</p>
+            <p><strong>Country Choices:</strong></p>
+            <ol>
+                <li>Greece</li>
+                <li>Denmark</li>
+                <li>France</li>
+            </ol>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                    <li>Greece</li>
+                    <li>Denmark</li>
+                </ul>
+            </div>
+            <div class="timestamp">Registered on: May 15, 2025, At 10:07:37 PM</div>
+        </div>
+        
+        <div class="school-card">
+            <h3>3. 1st Middle School of Kifisia</h3>
+            <p><strong>School Name:</strong> 1st Middle School of Kifisia</p>
+            <p><strong>Principal:</strong> Kokkini Konstantina</p>
+            <p><strong>Address:</strong> Levidou 42</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@1gym-kifis.att.sch.gr">mail@1gym-kifis.att.sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2108015590">2108015590</a></p>
+            <p><strong>Chief Advisor(s):</strong> Laskaridou Evgenia / Michaloutsou Anastasia</p>
+            <p><strong>Contact Advisor:</strong> Laskaridou Evgenia / 6945752057</p>
+            <p><strong>Delegates:</strong> 15</p>
+            <p><strong>Country Choices:</strong></p>
+            <ol>
+                <li>China</li>
+                <li>Saudi Arabia</li>
+                <li>England</li>
+            </ol>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                    <li>China</li>
+                    <li>Saudi Arabia</li>
+                </ul>
+            </div>
+            <div class="timestamp">Registered on: June 5, 2025, At 10:55:54 AM</div>
+        </div>
+
+        <div class="school-card">
+            <h3>4. 1st Model Junior High School of Thessaloniki</h3>
+            <p><strong>School Name:</strong> 1st Model Junior High school of Thessaloniki</p>
+            <p><strong>Principal:</strong> E. Kosmidis</p>
+            <p><strong>Address:</strong> Eth. Amynis 26, Thessaloniki 546 21</p>
+            <p><strong>Email:</strong> <a href="mailto:1peirgth@gmail.com">1peirgth@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2310819943">231 081 9943</a></p>
+            <p><strong>Chief Advisor(s):</strong> Aspasia Karasouli</p>
+            <p><strong>Contact Advisor:</strong> Aspasia Karasouli 6979915770</p>
+            <p><strong>Delegates:</strong> 16</p>
+            <p><strong>Country Choices:</strong></p>
+            <ol>
+                <li>Sweden</li>
+                <li>Netherlands</li>
+                <li>Norway</li>
+            </ol>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                    <li>Sweden</li>
+                    <li>Netherlands</li>
+                </ul>
+            </div>
+            <div class="timestamp">Registered on: June 19, 2025, At 9:05:05 PM</div>
+        </div>
+        
+        <div class="school-card">
+            <h3>5. American Farm School</h3>
+            <p><strong>School Name:</strong> American Farm School</p>
+            <p><strong>Principal:</strong> Mr Slavoudis Dimitrios</p>
+            <p><strong>Address:</strong> Marinou Antipa 54, Thermi 570 01</p>
+            <p><strong>Email:</strong> <a href="mailto:anikif@afs.edu.gr">anikif@afs.edu.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2310492962">2310492962</a></p>
+            <p><strong>Chief Advisor(s):</strong> Nikiforidou Athina</p>
+            <p><strong>Contact Advisor:</strong> Nikiforidou Athina 6944244471</p>
+            <p><strong>Delegates:</strong> 17?</p>
+            <p><strong>Country Choices:</strong></p>
+            <ol>
+                <li>Australia</li>
+                <li>Germany</li>
+                <li>Oman</li>
+            </ol>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                    <li>Australia</li>
+                    <li>Germany</li>
+                </ul>
+            </div>
+            <div class="timestamp">Registered on: June 20, 2025, At 11:31:58 AM</div>
+        </div>
+
+        <div class="school-card">
+            <h3>6. 16th General Lyceum of Thessaloniki</h3>
+            <p><strong>School Name:</strong> 16th General Lyceum of Thessaloniki</p>
+            <p><strong>Principal:</strong> Foteini Nikolaidou</p>
+            <p><strong>Address:</strong> Koloniari 15, 54629, Thessaloniki</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@16lyk-thess.thess.sch.gr">mail@16lyk-thess.thess.sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2310532400">2310 532400</a></p>
+            <p><strong>Chief Advisor(s):</strong> Despina Avgerinou</p>
+            <p><strong>Contact Advisor:</strong> Despina Avgerinou, 6974922111</p>
+            <p><strong>Delegates:</strong> 8</p>
+            <p><strong>Country Choices:</strong></p>
+            <ol>
+                <li>Italy</li>
+                <li>India</li>
+                <li>Egypt</li>
+            </ol>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                    <li>Italy</li>
+                </ul>
+            </div>
+            <div class="timestamp">Registered on: June 22, 2025, At 4:38:50 PM</div>
+        </div>
+
+        <div class="school-card">
+            <h3>7. 6th General Lyceum of Kalamaria</h3>
+            <p><strong>School Name:</strong> 6th General Lyceum of Kalamaria</p>
+            <p><strong>Principal:</strong> Georgios Mavrochalyvidis</p>
+            <p><strong>Address:</strong> Efessou 3, 55132 Kalamaria, Greece</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@6lyk-kalam.thess.sch.gr">mail@6lyk-kalam.thess.sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+302310444261">+30 2310444261</a></p>
+            <p><strong>Chief Advisor(s):</strong> Angeliki Maria Oikomomopoulou</p>
+            <p><strong>Contact Advisor:</strong> Angeliki Maria Oikonomopoulou: +30 6945410017</p>
+            <p><strong>Delegates:</strong> 8</p>
+            <p><strong>Country Choices:</strong></p>
+            <ol>
+                <li>Finland</li>
+                <li>Ireland</li>
+                <li>Belgium</li>
+            </ol>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                    <li>Finland</li>
+                </ul>
+            </div>
+            <div class="timestamp">Registered on: June 30, 2025, At 9:22:34 PM</div>
+        </div>
+        
+        <div class="school-card">
+            <h3>8. Makrochori Middle School</h3>
+            <p><strong>School Name:</strong> Makrochori Middle School</p>
+            <p><strong>Principal:</strong> Maria Kotampitsi</p>
+            <p><strong>Address:</strong> 11 Polytechneiou Street, Makrochori, Imathia 59100</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@gym-makroch.ima.sch.gr">mail@gym-makroch.ima.sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2331041334">2331041334</a></p>
+            <p><strong>Chief Advisor(s):</strong> Zarifi Vasoglou</p>
+            <p><strong>Contact Advisor:</strong> Zarifi Vasoglou 6944418605</p>
+            <p><strong>Delegates:</strong> 8</p>
+            <p><strong>Country Choices:</strong></p>
+            <ol>
+                <li>Portugal</li>
+                <li>Malta</li>
+                <li>Finland</li>
+            </ol>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                    <li>Portugal</li>
+                </ul>
+            </div>
+            <div class="timestamp">Registered on: July 2, 2025, At 1:29:53 AM</div>
+        </div>
+        
+    </div>
+  </main>
+
+</body>
+</html>
