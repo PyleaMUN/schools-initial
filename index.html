@@ -154,10 +154,6 @@
         color: #0066cc;
         text-decoration: none;
     }
-
-    .school-card a:hover {
-        text-decoration: underline;
-    }
     
     .school-card ol {
         padding-left: 20px;
@@ -185,6 +181,26 @@
         color: #777;
         text-align: right;
         margin-top: 1.5em;
+    }
+
+    /* Generate Button Style */
+    .generate-button {
+        display: block;
+        width: 100%;
+        background-color: #43a047;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 1.5em;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    .generate-button:hover {
+        background-color: #388e3c;
     }
 
     @media (max-width: 768px) {
@@ -223,7 +239,7 @@
   </div>
 
   <main>
-    <h1>📊 Initial Registration of Schools (for internal secretarial use only)</h1>
+    <h1>📊 Registration Dashboard (for internal secretarial use only)</h1>
     
     <div class="legend-box">
         <strong>Legend:</strong> For the purposes of the PyleaMUN Conference, <em>Junior High School</em>, <em>Lower Secondary School</em> and <em>Middle School</em> will be used to refer to <code>"Γυμνάσιο"</code> while <em>Senior High School</em> and <em>Upper Secondary School</em> will be used to refer to <code>"Λύκειο"</code>.
@@ -265,18 +281,24 @@
             <p><strong>Contact Advisor:</strong> Fani Vasilikou +306976371669</p>
             <p><strong>Delegates:</strong> 18</p>
             <p><strong>Country Choices:</strong></p>
-            <ol>
-                <li>France</li>
-                <li>United Kingdom</li>
-            </ol>
+            <ol><li>France</li><li>United Kingdom</li></ol>
             <div class="assignment-section">
                 <p><strong>Country(ies) Assigned:</strong></p>
-                <ul>
-                    <li>France</li>
-                    <li>United Kingdom</li>
-                </ul>
+                <ul><li>France</li><li>United Kingdom</li></ul>
             </div>
-            <div class="timestamp">Registered on: July 2, 2025, At 5:25:50 PM</div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="1st Middle School of Pylea"
+                data-principal="Panagiotis Domvros"
+                data-address="Isminis 4 Pylea, 55535"
+                data-email="mail@1gym-pyleas.thess.sch.gr"
+                data-phone="2310329199"
+                data-chief-advisor="Fani Vasilikou"
+                data-contact-advisor="Fani Vasilikou +306976371669"
+                data-delegates="18"
+                data-assigned-countries="France, United Kingdom">
+                ✉️ Generate Reply
+            </button>
+            <div class="timestamp">Registered on: July 2, 2025, at 6:08:50 PM</div>
         </div>
 
         <div class="school-card">
@@ -290,18 +312,23 @@
             <p><strong>Contact Advisor:</strong> Maria Antoniadou</p>
             <p><strong>Delegates:</strong> 10</p>
             <p><strong>Country Choices:</strong></p>
-            <ol>
-                <li>Greece</li>
-                <li>Denmark</li>
-                <li>France</li>
-            </ol>
+            <ol><li>Greece</li><li>Denmark</li><li>France</li></ol>
             <div class="assignment-section">
                 <p><strong>Country(ies) Assigned:</strong></p>
-                <ul>
-                    <li>Greece</li>
-                    <li>Denmark</li>
-                </ul>
+                <ul><li>Greece</li><li>Denmark</li></ul>
             </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="2nd General Lyceum of Sykeon “Philippos”"
+                data-principal="Paschalis Karakaris"
+                data-address="24 spartakou str Sykies"
+                data-email="mail@2lyk-sykeon.thess.sch.gr"
+                data-phone="2310202091"
+                data-chief-advisor="Maria Antoniadou"
+                data-contact-advisor="Maria Antoniadou"
+                data-delegates="10"
+                data-assigned-countries="Greece, Denmark">
+                ✉️ Generate Reply
+            </button>
             <div class="timestamp">Registered on: May 15, 2025, At 10:07:37 PM</div>
         </div>
         
@@ -316,18 +343,23 @@
             <p><strong>Contact Advisor:</strong> Laskaridou Evgenia / 6945752057</p>
             <p><strong>Delegates:</strong> 15</p>
             <p><strong>Country Choices:</strong></p>
-            <ol>
-                <li>China</li>
-                <li>Saudi Arabia</li>
-                <li>England</li>
-            </ol>
+            <ol><li>China</li><li>Saudi Arabia</li><li>England</li></ol>
             <div class="assignment-section">
                 <p><strong>Country(ies) Assigned:</strong></p>
-                <ul>
-                    <li>China</li>
-                    <li>Saudi Arabia</li>
-                </ul>
+                <ul><li>China</li><li>Saudi Arabia</li></ul>
             </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="1st Middle School of Kifisia"
+                data-principal="Kokkini Konstantina"
+                data-address="Levidou 42"
+                data-email="mail@1gym-kifis.att.sch.gr"
+                data-phone="2108015590"
+                data-chief-advisor="Laskaridou Evgenia / Michaloutsou Anastasia"
+                data-contact-advisor="Laskaridou Evgenia / 6945752057"
+                data-delegates="15"
+                data-assigned-countries="China, Saudi Arabia">
+                ✉️ Generate Reply
+            </button>
             <div class="timestamp">Registered on: June 5, 2025, At 10:55:54 AM</div>
         </div>
 
@@ -342,21 +374,26 @@
             <p><strong>Contact Advisor:</strong> Aspasia Karasouli 6979915770</p>
             <p><strong>Delegates:</strong> 16</p>
             <p><strong>Country Choices:</strong></p>
-            <ol>
-                <li>Sweden</li>
-                <li>Netherlands</li>
-                <li>Norway</li>
-            </ol>
+            <ol><li>Sweden</li><li>Netherlands</li><li>Norway</li></ol>
             <div class="assignment-section">
                 <p><strong>Country(ies) Assigned:</strong></p>
-                <ul>
-                    <li>Sweden</li>
-                    <li>Netherlands</li>
-                </ul>
+                <ul><li>Sweden</li><li>Netherlands</li></ul>
             </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="1st Model Junior High school of Thessaloniki"
+                data-principal="E. Kosmidis"
+                data-address="Eth. Amynis 26, Thessaloniki 546 21"
+                data-email="1peirgth@gmail.com"
+                data-phone="231 081 9943"
+                data-chief-advisor="Aspasia Karasouli"
+                data-contact-advisor="Aspasia Karasouli 6979915770"
+                data-delegates="16"
+                data-assigned-countries="Sweden, Netherlands">
+                ✉️ Generate Reply
+            </button>
             <div class="timestamp">Registered on: June 19, 2025, At 9:05:05 PM</div>
         </div>
-        
+
         <div class="school-card">
             <h3>5. American Farm School</h3>
             <p><strong>School Name:</strong> American Farm School</p>
@@ -368,18 +405,23 @@
             <p><strong>Contact Advisor:</strong> Nikiforidou Athina 6944244471</p>
             <p><strong>Delegates:</strong> 17?</p>
             <p><strong>Country Choices:</strong></p>
-            <ol>
-                <li>Australia</li>
-                <li>Germany</li>
-                <li>Oman</li>
-            </ol>
+            <ol><li>Australia</li><li>Germany</li><li>Oman</li></ol>
             <div class="assignment-section">
                 <p><strong>Country(ies) Assigned:</strong></p>
-                <ul>
-                    <li>Australia</li>
-                    <li>Germany</li>
-                </ul>
+                <ul><li>Australia</li><li>Germany</li></ul>
             </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="American Farm School"
+                data-principal="Mr Slavoudis Dimitrios"
+                data-address="Marinou Antipa 54, Thermi 570 01"
+                data-email="anikif@afs.edu.gr"
+                data-phone="2310492962"
+                data-chief-advisor="Nikiforidou Athina"
+                data-contact-advisor="Nikiforidou Athina 6944244471"
+                data-delegates="17?"
+                data-assigned-countries="Australia, Germany">
+                ✉️ Generate Reply
+            </button>
             <div class="timestamp">Registered on: June 20, 2025, At 11:31:58 AM</div>
         </div>
 
@@ -394,17 +436,23 @@
             <p><strong>Contact Advisor:</strong> Despina Avgerinou, 6974922111</p>
             <p><strong>Delegates:</strong> 8</p>
             <p><strong>Country Choices:</strong></p>
-            <ol>
-                <li>Italy</li>
-                <li>India</li>
-                <li>Egypt</li>
-            </ol>
+            <ol><li>Italy</li><li>India</li><li>Egypt</li></ol>
             <div class="assignment-section">
                 <p><strong>Country(ies) Assigned:</strong></p>
-                <ul>
-                    <li>Italy</li>
-                </ul>
+                <ul><li>Italy</li></ul>
             </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="16th General Lyceum of Thessaloniki"
+                data-principal="Foteini Nikolaidou"
+                data-address="Koloniari 15, 54629, Thessaloniki"
+                data-email="mail@16lyk-thess.thess.sch.gr"
+                data-phone="2310 532400"
+                data-chief-advisor="Despina Avgerinou"
+                data-contact-advisor="Despina Avgerinou, 6974922111"
+                data-delegates="8"
+                data-assigned-countries="Italy">
+                ✉️ Generate Reply
+            </button>
             <div class="timestamp">Registered on: June 22, 2025, At 4:38:50 PM</div>
         </div>
 
@@ -419,17 +467,23 @@
             <p><strong>Contact Advisor:</strong> Angeliki Maria Oikonomopoulou: +30 6945410017</p>
             <p><strong>Delegates:</strong> 8</p>
             <p><strong>Country Choices:</strong></p>
-            <ol>
-                <li>Finland</li>
-                <li>Ireland</li>
-                <li>Belgium</li>
-            </ol>
+            <ol><li>Finland</li><li>Ireland</li><li>Belgium</li></ol>
             <div class="assignment-section">
                 <p><strong>Country(ies) Assigned:</strong></p>
-                <ul>
-                    <li>Finland</li>
-                </ul>
+                <ul><li>Finland</li></ul>
             </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="6th General Lyceum of Kalamaria"
+                data-principal="Georgios Mavrochalyvidis"
+                data-address="Efessou 3, 55132 Kalamaria, Greece"
+                data-email="mail@6lyk-kalam.thess.sch.gr"
+                data-phone="+30 2310444261"
+                data-chief-advisor="Angeliki Maria Oikomomopoulou"
+                data-contact-advisor="Angeliki Maria Oikonomopoulou: +30 6945410017"
+                data-delegates="8"
+                data-assigned-countries="Finland">
+                ✉️ Generate Reply
+            </button>
             <div class="timestamp">Registered on: June 30, 2025, At 9:22:34 PM</div>
         </div>
         
@@ -444,22 +498,45 @@
             <p><strong>Contact Advisor:</strong> Zarifi Vasoglou 6944418605</p>
             <p><strong>Delegates:</strong> 8</p>
             <p><strong>Country Choices:</strong></p>
-            <ol>
-                <li>Portugal</li>
-                <li>Malta</li>
-                <li>Finland</li>
-            </ol>
+            <ol><li>Portugal</li><li>Malta</li><li>Finland</li></ol>
             <div class="assignment-section">
                 <p><strong>Country(ies) Assigned:</strong></p>
-                <ul>
-                    <li>Portugal</li>
-                </ul>
+                <ul><li>Portugal</li></ul>
             </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="Makrochori Middle School"
+                data-principal="Maria Kotampitsi"
+                data-address="11 Polytechneiou Street, Makrochori, Imathia 59100"
+                data-email="mail@gym-makroch.ima.sch.gr"
+                data-phone="2331041334"
+                data-chief-advisor="Zarifi Vasoglou"
+                data-contact-advisor="Zarifi Vasoglou 6944418605"
+                data-delegates="8"
+                data-assigned-countries="Portugal">
+                ✉️ Generate Reply
+            </button>
             <div class="timestamp">Registered on: July 2, 2025, At 1:29:53 AM</div>
         </div>
         
     </div>
   </main>
+  
+  <script>
+    function generateReply(buttonElement) {
+      const baseUrl = 'https://pyleamun.github.io/school-reply-generator/';
+      const params = new URLSearchParams();
+      
+      // Get all data attributes from the button and add them to the params.
+      for (const key in buttonElement.dataset) {
+        params.append(key, buttonElement.dataset[key]);
+      }
+
+      const finalUrl = `${baseUrl}?${params.toString()}`;
+      
+      // Open the URL in a new tab.
+      window.open(finalUrl, '_blank');
+    }
+  </script>
 
 </body>
 </html>
