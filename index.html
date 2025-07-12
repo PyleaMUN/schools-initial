@@ -247,7 +247,7 @@
 
     <div class="summary-box">
         <h2>Live Summary</h2>
-        <p><strong>Total Delegates Registered:</strong> 100</p>
+        <p><strong>Total Delegates Registered:</strong> <span id="totalDelegates">100</span></p>
         <div>
             <strong>Unavailable Countries (Already Assigned):</strong>
             <ul class="unavailable-countries-list">
@@ -540,7 +540,7 @@
                 data-school-name="Anaxagorio Lyceum of Nea Erythraia"
                 data-principal="Spithourakis Panayiotis"
                 data-address="Kazantzaki 29, Nea Erythraia"
-                data-email="lykneryt@sch.gr"
+                data-email="lykneryt@sch.sch.gr"
                 data-phone="2108073183"
                 data-chief-advisor="Kalliora Theodora"
                 data-contact-advisor="Kalliora Theodora, 6945230179"
@@ -569,6 +569,29 @@
       // Open the URL in a new tab.
       window.open(finalUrl, '_blank');
     }
+
+    // New JavaScript to calculate and update total delegates
+    function updateTotalDelegates() {
+      let total = 0;
+      // Select all elements that have the data-delegates attribute
+      const delegateElements = document.querySelectorAll('[data-delegates]');
+      
+      delegateElements.forEach(element => {
+        // Get the value of the data-delegates attribute
+        const delegatesString = element.dataset.delegates;
+        // Clean the string (remove non-numeric characters like '?') and convert to integer
+        const delegates = parseInt(delegatesString.replace(/\D/g, ''), 10);
+        if (!isNaN(delegates)) {
+          total += delegates;
+        }
+      });
+      
+      // Update the content of the span with id 'totalDelegates'
+      document.getElementById('totalDelegates').textContent = total;
+    }
+
+    // Call the function when the page loads
+    window.addEventListener('DOMContentLoaded', updateTotalDelegates);
   </script>
 
 </body>
