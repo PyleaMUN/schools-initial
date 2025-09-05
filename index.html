@@ -82,7 +82,7 @@
         color: #333;
     }
 
-    /* New Summary Box Style */
+    /* Live Summary Box Style */
     .summary-box {
         background-color: #f3e5f5;
         border: 1px solid #e1bee7;
@@ -116,7 +116,7 @@
         margin-bottom: 0.3em;
     }
 
-    /* Styles for the registration data display */
+    /* Cards */
     .card-container {
         display: flex;
         flex-direction: column;
@@ -159,7 +159,7 @@
         padding-left: 20px;
     }
 
-    /* Assigned Countries Section Style */
+    /* Assigned Countries */
     .assignment-section {
         background-color: #e0f2f1;
         border: 1px solid #b2dfdb;
@@ -183,7 +183,7 @@
         margin-top: 1.5em;
     }
 
-    /* Generate Button Style */
+    /* Generate Button */
     .generate-button {
         display: block;
         width: 100%;
@@ -251,26 +251,39 @@
         <div>
             <strong>Unavailable Countries (Already Assigned):</strong>
             <ul class="unavailable-countries-list">
-                <li>Australia</li>
-                <li>China</li>
-                <li>Denmark</li>
-                <li>Finland</li>
-                <li>France</li>
-                <li>Germany</li>
-                <li>Greece</li>
-                <li>Italy</li>
-                <li>Netherlands</li>
-                <li>North Korea</li>
-                <li>Portugal</li>
-                <li>Republic of Korea</li>
-                <li>Saudi Arabia</li>
-                <li>Sweden</li>
-                <li>United Kingdom</li>
+<li>Australia</li>
+			<li>Austria</li>
+			<li>Belgium</li>
+			<li>China</li>
+			<li>Cyprus</li>
+			<li>Czech Republic</li>
+			<li>Denmark</li>
+			<li>Finland</li>
+			<li>France</li>
+			<li>Germany</li>
+			<li>Greece</li>
+			<li>Iceland</li>
+			<li>India</li>
+			<li>Ireland</li>
+			<li>Italy</li>
+			<li>Netherlands</li>
+			<li>North Korea</li>
+			<li>Portugal</li>
+			<li>Republic of Korea</li>
+			<li>Saudi Arabia</li>
+			<li>Serbia</li>
+			<li>Sweden</li>
+			<li>Switzerland</li>
+			<li>Turkey</li>
+			<li>United Kingdom</li>
+			<li>United States</li>
             </ul>
         </div>
     </div>
 
     <div class="card-container">
+
+        <!-- Existing cards kept intact (1–9) -->
 
         <div class="school-card">
             <h3>1. 1st Middle School of Pylea</h3>
@@ -550,7 +563,231 @@
             </button>
             <div class="timestamp">Registered on: July 11, 2025, At 1:34:07 AM</div>
         </div>
-        
+
+        <!-- ========== NEW REGISTRATIONS (YOUR DATA) ========== -->
+
+        <div class="school-card">
+            <h3>10. 1st Senior High School of Panorama</h3>
+            <p><strong>School Name:</strong> 1st Senior High School of Panorama</p>
+            <p><strong>Principal:</strong> Pantelis Komninos</p>
+            <p><strong>Address:</strong> Epirou 4</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@1lyk-panor.thess.sch.gr">mail@1lyk-panor.thess.sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2310342626">2310342626</a></p>
+            <p><strong>Chief Advisor(s):</strong> Sophia Zerva - Vicky Kosmidou</p>
+            <p><strong>Contact Advisor:</strong> Sophia Zerva - Vicky Kosmidou</p>
+            <p><strong>Delegates:</strong> 8</p>
+            <p><strong>Country Choices:</strong> —</p>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul><li>United States</li></ul>
+            </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="1st Senior High School of Panorama"
+                data-principal="Pantelis Komninos"
+                data-address="Epirou 4"
+                data-email="mail@1lyk-panor.thess.sch.gr"
+                data-phone="2310342626"
+                data-chief-advisor="Sophia Zerva - Vicky Kosmidou"
+                data-contact-advisor="Sophia Zerva - Vicky Kosmidou"
+                data-delegates="8"
+                data-assigned-countries="United States">
+                ✉️ Generate Reply
+            </button>
+            <div class="timestamp">Registered on: 17/08/2025 11:58:25 π.μ.</div>
+        </div>
+
+        <div class="school-card">
+            <h3>11. Gymnasium of Zalongo</h3>
+            <p><strong>School Name:</strong> Gymnasium of Zalongo</p>
+            <p><strong>Principal:</strong> Sofia Badima</p>
+            <p><strong>Address:</strong> Archagelos Preveza</p>
+            <p><strong>Email:</strong> <a href="mailto:gymzal@sch.gr">gymzal@sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2682360344">2682360344</a></p>
+            <p><strong>Chief Advisor(s):</strong> Sofia Badima</p>
+            <p><strong>Contact Advisor:</strong> Sofia Badima / 6932631697</p>
+            <p><strong>Delegates:</strong> 7</p>
+            <p><strong>Country Choices:</strong> —</p>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul><li>Belgium</li></ul>
+            </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="Gymnasium of Zalongo"
+                data-principal="Sofia Badima"
+                data-address="Archagelos Preveza"
+                data-email="gymzal@sch.gr"
+                data-phone="2682360344"
+                data-chief-advisor="Sofia Badima"
+                data-contact-advisor="Sofia Badima / 6932631697"
+                data-delegates="7"
+                data-assigned-countries="Belgium">
+                ✉️ Generate Reply
+            </button>
+            <div class="timestamp">Registered on: 03/09/2025 8:58:02 π.μ.</div>
+        </div>
+
+        <div class="school-card">
+            <h3>12. 3rd Junior High School of Kalamaria</h3>
+            <p><strong>School Name:</strong> 3rd junior high school of Kalamaria</p>
+            <p><strong>Principal:</strong> Evi Kousidou</p>
+            <p><strong>Address:</strong> 3 Mitropoliti Gennadiou street</p>
+            <p><strong>Email:</strong> <a href="mailto:3gymkalam@gmail.com">3gymkalam@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2310432936">2310432936</a></p>
+            <p><strong>Chief Advisor(s):</strong> Eleni Pougaridou</p>
+            <p><strong>Contact Advisor:</strong> Eleni Pougaridou 6947126396</p>
+            <p><strong>Delegates:</strong> 8</p>
+            <p><strong>Country Choices:</strong> —</p>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul><li>Switzerland</li></ul>
+            </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="3rd junior high school of Kalamaria"
+                data-principal="Evi Kousidou"
+                data-address="3 Mitropoliti Gennadiou street"
+                data-email="3gymkalam@gmail.com"
+                data-phone="2310432936"
+                data-chief-advisor="Eleni Pougaridou"
+                data-contact-advisor="Eleni Pougaridou 6947126396"
+                data-delegates="8"
+                data-assigned-countries="Switzerland">
+                ✉️ Generate Reply
+            </button>
+            <div class="timestamp">Registered on: 03/09/2025 8:28:34 μ.μ.</div>
+        </div>
+
+        <div class="school-card">
+            <h3>13. 1ο ΓΥΜΝΑΣΙΟ ΠΥΡΓΟΥ / 1o GYMNASIO PIRGOY</h3>
+            <p><strong>School Name:</strong> 1ο ΓΥΜΝΑΣΙΟ ΠΥΡΓΟΥ / 1o GYMNASIO PIRGOY</p>
+            <p><strong>Principal:</strong> ΑΓΓΕΛΟΣ ΛΑΜΠΡΟΠΟΥΛΟΣ / AGGELOS LAMPROPOULOS</p>
+            <p><strong>Address:</strong> ΓΥΜΝΑΣΙΑΡΧΟΥ ΔΟΥΚΑ 20 / GYMNASIARXOU DOYKA 20</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@1gym-pyrgou.ilei.sch.gr">mail@1gym-pyrgou.ilei.sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2621022909">2621022909</a></p>
+            <p><strong>Chief Advisor(s):</strong> ΛΑΜΠΡΙΝΗ ΠΑΝΤΗ / LAMPRINI PANTI</p>
+            <p><strong>Contact Advisor:</strong> ΛΑΜΠΡΙΝΗ ΠΑΝΤΗ / LAMPRINI PANTI 6938630036</p>
+            <p><strong>Delegates:</strong> 16</p>
+            <p><strong>Country Choices:</strong> —</p>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                  <li>Czech Republic</li>
+                  <li>Austria</li>
+                </ul>
+            </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="1o Gymnasio Pirgou"
+                data-principal="Aggelos Lampropoulos"
+                data-address="Gymnasiarchou Douka 20"
+                data-email="mail@1gym-pyrgou.ilei.sch.gr"
+                data-phone="2621022909"
+                data-chief-advisor="Lamprini Panti"
+                data-contact-advisor="Lamprini Panti 6938630036"
+                data-delegates="16"
+                data-assigned-countries="Czech Republic, Austria">
+                ✉️ Generate Reply
+            </button>
+            <div class="timestamp">Registered on: 04/09/2025 10:17:43 π.μ.</div>
+        </div>
+
+        <div class="school-card">
+            <h3>14. 1st GYMNASIO KILKIS</h3>
+            <p><strong>School Name:</strong> 1st GYMNASIO KILKIS</p>
+            <p><strong>Principal:</strong> IWANNA GKIOULEKA</p>
+            <p><strong>Address:</strong> 21st IOUNIOU 2</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@1gym-kilkis.kil.sch.gr">mail@1gym-kilkis.kil.sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2341022338">2341022338</a></p>
+            <p><strong>Chief Advisor(s):</strong> VIVI ELEFTHERIADOU</p>
+            <p><strong>Contact Advisor:</strong> VIVI ELEFTHERIADOU  6945975174</p>
+            <p><strong>Delegates:</strong> 12</p>
+            <p><strong>Country Choices:</strong> —</p>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                  <li>Cyprus</li>
+                  <li>Serbia</li>
+                </ul>
+            </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="1st GYMNASIO KILKIS"
+                data-principal="IWANNA GKIOULEKA"
+                data-address="21st IOUNIOU 2"
+                data-email="mail@1gym-kilkis.kil.sch.gr"
+                data-phone="2341022338"
+                data-chief-advisor="VIVI ELEFTHERIADOU"
+                data-contact-advisor="VIVI ELEFTHERIADOU 6945975174"
+                data-delegates="12"
+                data-assigned-countries="Cyprus, Serbia">
+                ✉️ Generate Reply
+            </button>
+            <div class="timestamp">Registered on: 04/09/2025 11:55:02 π.μ.</div>
+        </div>
+
+        <div class="school-card">
+            <h3>15. MODEL IONIDEIOS JUNIOR HIGH SCHOOL OF PIRAEUS</h3>
+            <p><strong>School Name:</strong> MODEL IONIDEIOS JUNIOR HIGH SCHOOL OF PIREAUS</p>
+            <p><strong>Principal:</strong> Dr. Georga, Evaggelia</p>
+            <p><strong>Address:</strong> Sotiros Dios 17, 18535 Piraeus</p>
+            <p><strong>Email:</strong> <a href="mailto:gympeiri@sch.gr">gympeiri@sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2104122260">210 4122260, 210 4114050</a></p>
+            <p><strong>Chief Advisor(s):</strong> Ms Grammata Maria, Ms Archodaki Athanasia, Ms Paraskevoulakou Anastasia</p>
+            <p><strong>Contact Advisor:</strong> 2104114050, 6938 424064</p>
+            <p><strong>Delegates:</strong> 16</p>
+            <p><strong>Country Choices:</strong> —</p>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                  <li>Ireland</li>
+                  <li>Iceland</li>
+                </ul>
+            </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="MODEL IONIDEIOS JUNIOR HIGH SCHOOL OF PIREAEUS"
+                data-principal="Dr. Georga, Evaggelia"
+                data-address="Sotiros Dios 17, 18535 Piraeus"
+                data-email="gympeiri@sch.gr"
+                data-phone="2104122260"
+                data-chief-advisor="Ms Grammata Maria, Ms Archodaki Athanasia, Ms Paraskevoulakou Anastasia"
+                data-contact-advisor="2104114050, 6938 424064"
+                data-delegates="16"
+                data-assigned-countries="Ireland, Iceland">
+                ✉️ Generate Reply
+            </button>
+            <div class="timestamp">Registered on: 05/09/2025 10:19:30 π.μ.</div>
+        </div>
+
+        <div class="school-card">
+            <h3>16. MODEL VOCATIONAL HIGH SCHOOL OF EPANOMI</h3>
+            <p><strong>School Name:</strong> MODEL VOCATIONAL HIGH SCHOOL OF EPANOMI</p>
+            <p><strong>Principal:</strong> PANTELIS GALITIS</p>
+            <p><strong>Address:</strong> N. SARVANI 2, 57500, EPANOMI</p>
+            <p><strong>Email:</strong> <a href="mailto:pepal-epanom@sch.gr">pepal-epanom@sch.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2392044260">2392044260</a></p>
+            <p><strong>Chief Advisor(s):</strong> EVANGELIA TSIPROPOULOU</p>
+            <p><strong>Contact Advisor:</strong> ENANGELIA TSIPROPOULOU 6977588325</p>
+            <p><strong>Delegates:</strong> 10</p>
+            <p><strong>Country Choices:</strong> —</p>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                  <li>India</li>
+                  <li>Turkey</li>
+                </ul>
+            </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="MODEL VOCATIONAL HIGH SCHOOL OF EPANOMI"
+                data-principal="PANTELIS GALITIS"
+                data-address="N. SARVANI 2, 57500, EPANOMI"
+                data-email="pepal-epanom@sch.gr"
+                data-phone="2392044260"
+                data-chief-advisor="EVANGELIA TSIPROPOULOU"
+                data-contact-advisor="ENANGELIA TSIPROPOULOU 6977588325"
+                data-delegates="10"
+                data-assigned-countries="India, Turkey">
+                ✉️ Generate Reply
+            </button>
+            <div class="timestamp">Registered on: 05/09/2025 5:30:27 μ.μ.</div>
+        </div>
+
     </div>
   </main>
   
@@ -558,39 +795,25 @@
     function generateReply(buttonElement) {
       const baseUrl = 'https://pyleamun.github.io/school-reply-generator/';
       const params = new URLSearchParams();
-      
-      // Get all data attributes from the button and add them to the params.
       for (const key in buttonElement.dataset) {
         params.append(key, buttonElement.dataset[key]);
       }
-
       const finalUrl = `${baseUrl}?${params.toString()}`;
-      
-      // Open the URL in a new tab.
       window.open(finalUrl, '_blank');
     }
 
-    // New JavaScript to calculate and update total delegates
+    // Recalculate and update total delegates from all cards
     function updateTotalDelegates() {
       let total = 0;
-      // Select all elements that have the data-delegates attribute
       const delegateElements = document.querySelectorAll('[data-delegates]');
-      
       delegateElements.forEach(element => {
-        // Get the value of the data-delegates attribute
         const delegatesString = element.dataset.delegates;
-        // Clean the string (remove non-numeric characters like '?') and convert to integer
         const delegates = parseInt(delegatesString.replace(/\D/g, ''), 10);
-        if (!isNaN(delegates)) {
-          total += delegates;
-        }
+        if (!isNaN(delegates)) total += delegates;
       });
-      
-      // Update the content of the span with id 'totalDelegates'
       document.getElementById('totalDelegates').textContent = total;
     }
 
-    // Call the function when the page loads
     window.addEventListener('DOMContentLoaded', updateTotalDelegates);
   </script>
 
