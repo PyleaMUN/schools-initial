@@ -247,43 +247,43 @@
 
     <div class="summary-box">
         <h2>Live Summary</h2>
-        <p><strong>Total Delegates Registered:</strong> <span id="totalDelegates">100</span></p>
+        <p><strong>Total Delegates Registered:</strong> <span id="totalDelegates">176</span></p>
         <div>
             <strong>Unavailable Countries (Already Assigned):</strong>
             <ul class="unavailable-countries-list">
-<li>Australia</li>
-			<li>Austria</li>
-			<li>Belgium</li>
-			<li>China</li>
-			<li>Cyprus</li>
-			<li>Czech Republic</li>
-			<li>Denmark</li>
-			<li>Finland</li>
-			<li>France</li>
-			<li>Germany</li>
-			<li>Greece</li>
-			<li>Iceland</li>
-			<li>India</li>
-			<li>Ireland</li>
-			<li>Italy</li>
-			<li>Netherlands</li>
-			<li>North Korea</li>
-			<li>Portugal</li>
-			<li>Republic of Korea</li>
-			<li>Saudi Arabia</li>
-			<li>Serbia</li>
-			<li>Sweden</li>
-			<li>Switzerland</li>
-			<li>Turkey</li>
-			<li>United Kingdom</li>
-			<li>United States</li>
+                <li>Australia</li>
+                <li>Austria</li>
+                <li>Belgium</li>
+                <li>Canada</li>
+                <li>China</li>
+                <li>Cyprus</li>
+                <li>Czech Republic</li>
+                <li>Denmark</li>
+                <li>Finland</li>
+                <li>France</li>
+                <li>Germany</li>
+                <li>Greece</li>
+                <li>Iceland</li>
+                <li>India</li>
+                <li>Ireland</li>
+                <li>Italy</li>
+                <li>Luxembourg</li>
+                <li>Netherlands</li>
+                <li>North Korea</li>
+                <li>Portugal</li>
+                <li>Republic of Korea</li>
+                <li>Saudi Arabia</li>
+                <li>Serbia</li>
+                <li>Sweden</li>
+                <li>Switzerland</li>
+                <li>Turkey</li>
+                <li>United Kingdom</li>
+                <li>United States</li>
             </ul>
         </div>
     </div>
 
     <div class="card-container">
-
-        <!-- Existing cards kept intact (1–9) -->
 
         <div class="school-card">
             <h3>1. 1st Middle School of Pylea</h3>
@@ -433,7 +433,7 @@
                 data-phone="2310492962"
                 data-chief-advisor="Nikiforidou Athina"
                 data-contact-advisor="Nikiforidou Athina 6944244471"
-                data-delegates="17?"
+                data-delegates="17"
                 data-assigned-countries="Australia, Germany">
                 ✉️ Generate Reply
             </button>
@@ -563,8 +563,6 @@
             </button>
             <div class="timestamp">Registered on: July 11, 2025, At 1:34:07 AM</div>
         </div>
-
-        <!-- ========== NEW REGISTRATIONS (YOUR DATA) ========== -->
 
         <div class="school-card">
             <h3>10. 1st Senior High School of Panorama</h3>
@@ -788,6 +786,39 @@
             <div class="timestamp">Registered on: 05/09/2025 5:30:27 μ.μ.</div>
         </div>
 
+        <div class="school-card">
+            <h3>17. Tositseio-Arsakeio Gymnasio Ekalis</h3>
+            <p><strong>School Name:</strong> Tositseio-Arsakeio Gymnasio Ekalis</p>
+            <p><strong>Principal:</strong> Dr Dimitrios Kalogiannis</p>
+            <p><strong>Address:</strong> Leof. Marathonos 1- Anixi</p>
+            <p><strong>Email:</strong> <a href="mailto:b-gym-e@arsakeio.gr">b-gym-e@arsakeio.gr</a></p>
+            <p><strong>Phone:</strong> <a href="tel:2106218250">2106218250</a></p>
+            <p><strong>Chief Advisor(s):</strong> Ioanna Papadima</p>
+            <p><strong>Contact Advisor:</strong> Ioanna Papadima 6977782392</p>
+            <p><strong>Delegates:</strong> 10 (approx.)</p>
+            <p><strong>Country Choices:</strong> —</p>
+            <div class="assignment-section">
+                <p><strong>Country(ies) Assigned:</strong></p>
+                <ul>
+                  <li>Canada</li>
+                  <li>Luxembourg</li>
+                </ul>
+            </div>
+            <button class="generate-button" onclick="generateReply(this)"
+                data-school-name="Tositseio-Arsakeio Gymnasio Ekalis"
+                data-principal="Dr Dimitrios Kalogiannis"
+                data-address="Leof. Marathonos 1- Anixi"
+                data-email="b-gym-e@arsakeio.gr"
+                data-phone="2106218250"
+                data-chief-advisor="Ioanna Papadima"
+                data-contact-advisor="Ioanna Papadima 6977782392"
+                data-delegates="10"
+                data-assigned-countries="Canada, Luxembourg">
+                ✉️ Generate Reply
+            </button>
+            <div class="timestamp">Registered on: 09/09/2025 7:56:32 μ.μ.</div>
+        </div>
+
     </div>
   </main>
   
@@ -805,11 +836,16 @@
     // Recalculate and update total delegates from all cards
     function updateTotalDelegates() {
       let total = 0;
-      const delegateElements = document.querySelectorAll('[data-delegates]');
-      delegateElements.forEach(element => {
-        const delegatesString = element.dataset.delegates;
-        const delegates = parseInt(delegatesString.replace(/\D/g, ''), 10);
-        if (!isNaN(delegates)) total += delegates;
+      const delegateElements = document.querySelectorAll('.school-card');
+      delegateElements.forEach(card => {
+        const button = card.querySelector('.generate-button');
+        if (button && button.dataset.delegates) {
+            const delegatesString = button.dataset.delegates;
+            const delegates = parseInt(delegatesString.replace(/\D/g, ''), 10);
+            if (!isNaN(delegates)) {
+                total += delegates;
+            }
+        }
       });
       document.getElementById('totalDelegates').textContent = total;
     }
