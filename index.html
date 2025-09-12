@@ -247,38 +247,11 @@
 
     <div class="summary-box">
         <h2>Live Summary</h2>
-        <p><strong>Total Delegates Registered:</strong> <span id="totalDelegates">176</span></p>
+        <p><strong>Total Delegates Registered:</strong> <span id="totalDelegates">0</span></p>
         <div>
             <strong>Unavailable Countries (Already Assigned):</strong>
-            <ul class="unavailable-countries-list">
-                <li>Australia</li>
-                <li>Austria</li>
-                <li>Belgium</li>
-                <li>Canada</li>
-                <li>China</li>
-                <li>Cyprus</li>
-                <li>Czech Republic</li>
-                <li>Denmark</li>
-                <li>Finland</li>
-                <li>France</li>
-                <li>Germany</li>
-                <li>Greece</li>
-                <li>Iceland</li>
-                <li>India</li>
-                <li>Ireland</li>
-                <li>Italy</li>
-                <li>Luxembourg</li>
-                <li>Netherlands</li>
-                <li>North Korea</li>
-                <li>Portugal</li>
-                <li>Republic of Korea</li>
-                <li>Saudi Arabia</li>
-                <li>Serbia</li>
-                <li>Sweden</li>
-                <li>Switzerland</li>
-                <li>Turkey</li>
-                <li>United Kingdom</li>
-                <li>United States</li>
+            <ul class="unavailable-countries-list" id="unavailableList">
+                <!-- Auto-filled by JS -->
             </ul>
         </div>
     </div>
@@ -695,7 +668,7 @@
             <p><strong>Email:</strong> <a href="mailto:mail@1gym-kilkis.kil.sch.gr">mail@1gym-kilkis.kil.sch.gr</a></p>
             <p><strong>Phone:</strong> <a href="tel:2341022338">2341022338</a></p>
             <p><strong>Chief Advisor(s):</strong> VIVI ELEFTHERIADOU</p>
-            <p><strong>Contact Advisor:</strong> VIVI ELEFTHERIADOU  6945975174</p>
+            <p><strong>Contact Advisor:</strong> VIVI ELEFΘERIADOU  6945975174</p>
             <p><strong>Delegates:</strong> 12</p>
             <p><strong>Country Choices:</strong> —</p>
             <div class="assignment-section">
@@ -712,7 +685,7 @@
                 data-email="mail@1gym-kilkis.kil.sch.gr"
                 data-phone="2341022338"
                 data-chief-advisor="VIVI ELEFTHERIADOU"
-                data-contact-advisor="VIVI ELEFTHERIADOU 6945975174"
+                data-contact-advisor="VIVI ELEFΘERIADOU 6945975174"
                 data-delegates="12"
                 data-assigned-countries="Cyprus, Serbia">
                 ✉️ Generate Reply
@@ -761,7 +734,7 @@
             <p><strong>Email:</strong> <a href="mailto:pepal-epanom@sch.gr">pepal-epanom@sch.gr</a></p>
             <p><strong>Phone:</strong> <a href="tel:2392044260">2392044260</a></p>
             <p><strong>Chief Advisor(s):</strong> EVANGELIA TSIPROPOULOU</p>
-            <p><strong>Contact Advisor:</strong> ENANGELIA TSIPROPOULOU 6977588325</p>
+            <p><strong>Contact Advisor:</strong> ENANGELIA TSIPROΠOULOU 6977588325</p>
             <p><strong>Delegates:</strong> 10</p>
             <p><strong>Country Choices:</strong> —</p>
             <div class="assignment-section">
@@ -778,7 +751,7 @@
                 data-email="pepal-epanom@sch.gr"
                 data-phone="2392044260"
                 data-chief-advisor="EVANGELIA TSIPROPOULOU"
-                data-contact-advisor="ENANGELIA TSIPROPOULOU 6977588325"
+                data-contact-advisor="ENANGELIA TSIPROΠOULOU 6977588325"
                 data-delegates="10"
                 data-assigned-countries="India, Turkey">
                 ✉️ Generate Reply
@@ -819,6 +792,37 @@
             <div class="timestamp">Registered on: 09/09/2025 7:56:32 μ.μ.</div>
         </div>
 
+        <!-- NEW: 18. Αριστοτέλειο Κολλέγιο -->
+        <div class="school-card">
+          <h3>18. Αριστοτέλειο Κολλέγιο</h3>
+          <p><strong>School Name:</strong> Αριστοτέλειο Κολλέγιο</p>
+          <p><strong>Principal:</strong> Χρήστος Γκροζούδης</p>
+          <p><strong>Address:</strong> Περικλέους και Ευριπίδου</p>
+          <p><strong>Email:</strong> <a href="mailto:gymnasio@aristotelio.edu.gr">gymnasio@aristotelio.edu.gr</a></p>
+          <p><strong>Phone:</strong> <a href="tel:2310471711">2310 471711</a></p>
+          <p><strong>Chief Advisor(s):</strong> Ελένη Παπαδοπούλου, Στέλλα Πανοπούλου</p>
+          <p><strong>Contact Advisor:</strong> Ελένη Παπαδοπούλου, 6948 2688838</p>
+          <p><strong>Delegates:</strong> 8</p>
+          <p><strong>Country Choices:</strong> —</p>
+          <div class="assignment-section">
+              <p><strong>Country(ies) Assigned:</strong></p>
+              <ul><li>Norway</li></ul>
+          </div>
+          <button class="generate-button" onclick="generateReply(this)"
+              data-school-name="Αριστοτέλειο Κολλέγιο"
+              data-principal="Χρήστος Γκροζούδης"
+              data-address="Περικλέους και Ευριπίδου"
+              data-email="gymnasio@aristotelio.edu.gr"
+              data-phone="2310471711"
+              data-chief-advisor="Ελένη Παπαδοπούλου, Στέλλα Πανοπούλου"
+              data-contact-advisor="Ελένη Παπαδοπούλου, 6948 2688838"
+              data-delegates="8"
+              data-assigned-countries="Norway">
+              ✉️ Generate Reply
+          </button>
+          <div class="timestamp">Registered on: 12/09/2025 11:57:50 π.μ.</div>
+        </div>
+
     </div>
   </main>
   
@@ -833,24 +837,42 @@
       window.open(finalUrl, '_blank');
     }
 
-    // Recalculate and update total delegates from all cards
-    function updateTotalDelegates() {
+    // Auto-calc: total delegates + unavailable countries
+    function updateLiveSummary() {
       let total = 0;
-      const delegateElements = document.querySelectorAll('.school-card');
-      delegateElements.forEach(card => {
-        const button = card.querySelector('.generate-button');
-        if (button && button.dataset.delegates) {
-            const delegatesString = button.dataset.delegates;
-            const delegates = parseInt(delegatesString.replace(/\D/g, ''), 10);
-            if (!isNaN(delegates)) {
-                total += delegates;
-            }
-        }
+      const countrySet = new Set();
+
+      document.querySelectorAll('.school-card .generate-button').forEach(btn => {
+        // Delegates
+        const dStr = (btn.dataset.delegates || '').toString();
+        const d = parseInt(dStr.replace(/\D/g, ''), 10);
+        if (!isNaN(d)) total += d;
+
+        // Countries
+        const assigned = (btn.dataset.assignedCountries || '')
+          .split(',')
+          .map(s => s.trim())
+          .filter(Boolean);
+        assigned.forEach(c => countrySet.add(c));
       });
-      document.getElementById('totalDelegates').textContent = total;
+
+      // Update total
+      const totalNode = document.getElementById('totalDelegates');
+      if (totalNode) totalNode.textContent = total;
+
+      // Update unavailable list (alphabetical)
+      const listNode = document.getElementById('unavailableList');
+      if (listNode) {
+        listNode.innerHTML = '';
+        Array.from(countrySet).sort((a,b)=>a.localeCompare(b)).forEach(c => {
+          const li = document.createElement('li');
+          li.textContent = c;
+          listNode.appendChild(li);
+        });
+      }
     }
 
-    window.addEventListener('DOMContentLoaded', updateTotalDelegates);
+    window.addEventListener('DOMContentLoaded', updateLiveSummary);
   </script>
 
 </body>
